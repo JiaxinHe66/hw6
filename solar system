@@ -1,0 +1,27 @@
+function setup() {
+  createCanvas(700, 500);
+
+  sun = new Planet(150, 0, 0);
+  sun.planetColor = "#ff0000";
+
+  biggerPlanet = new Planet(90, 0.5, 400);
+
+  planet = new Planet(30, 1, 270);
+
+  moon = new Planet(10, 6, 30);
+  
+  sun.attachPlanet(planet);
+  sun.attachPlanet(biggerPlanet);
+}
+
+function draw() {
+  background(sun.backgroundColor);
+
+  center();
+
+  sun.draw();
+}
+
+function center() {
+  translate(width / 2, height / 2);
+}
